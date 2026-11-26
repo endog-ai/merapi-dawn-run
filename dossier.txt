@@ -1,0 +1,75 @@
+MERAPI DAWN RUN — dossier
+===========================
+Competition: best-flight-game-20261126-0057 — "Make the best flight game"
+Prize: $500 (top 50 entries share it) · Entry: free · Deadline: 2026-11-28 00:57 UTC
+
+WHAT IT IS
+----------
+An original bush-pilot flight game set at dawn over a volcanic Indonesian
+archipelago. You fly the mail plane PK-MRP on the dawn mail run: take off
+from the grass strip on Pulau Landas, thread eight glowing rings over rice
+terraces, villages and the smoking volcano, then put the plane down gently
+on the short island strip at Pulau Dermaga. Everything is drawn by the
+game's own code (plain Canvas 2D, no libraries, no network requests, no
+external files): procedural islands, a smoking volcano with a snow cap,
+rice-terrace fields, palm trees, villages with red-roofed houses, drifting
+clouds, birds, and a low dawn sun over the sea.
+
+HOW IT PLAYS
+------------
+- A complete loop: menu -> takeoff -> 8 rings -> landing -> results.
+- Takeoff: throttle up, rotate at about 90 km/h, climb away.
+- Rings pay 500 points each, plus up to 200 for flying dead centre, and
+  add 12 seconds to the clock. Miss one and you can turn back for it.
+- Landing: a smooth, centred touchdown on the Dermaga strip pays up to
+  1,800, plus time and fuel bonuses. Land too hard, too fast or banked
+  and you crash; ditch in the sea or clip terrain or the volcano and the
+  run ends.
+- Fuel drains with throttle; run dry and you glide. Stall below about
+  70 km/h with a warning light and horn. Flaps (F) slow you for landing.
+- Score is kept across runs in the browser (best score on the menu).
+
+CONTROLS
+--------
+  W / S ......... throttle up / down
+  Arrow Up/Down . pitch (climb / dive)
+  Arrow Left/Right  bank and turn (coordinated)
+  Mouse ......... steer (move to bank/pitch), hold click for throttle
+  F ............. flaps up/down
+  C ............. chase view / cockpit view (lit instrument panel)
+  P ............. pause    M ............. sound on/off
+  R ............. fly again    Enter ..... start from the menu
+
+VIEWS AND INSTRUMENTS
+---------------------
+- Chase view: the aircraft in frame with a spinning prop, nav lights,
+  the ring ahead, and the full HUD.
+- Cockpit view: a lit instrument panel with attitude indicator,
+  airspeed and altimeter dials, fuel and throttle gauges, stall and
+  low-fuel warning lights, plus the same HUD.
+- HUD: speed (km/h), vertical speed, altitude and height above ground,
+  compass strip with heading, throttle and fuel bars, score, countdown
+  timer, rings flown, a next-ring pointer with distance, and a live
+  minimap of the islands, rings and runways.
+
+TECHNICAL
+---------
+- game/index.html + game/game.js + game/style.css; opens in desktop
+  Chrome from its own files, plays offline, no network request.
+- Custom perspective renderer: projected terrain grid with height-based
+  colouring (sand, farmland patchwork, terraces, forest, rock, snow),
+  sea with a sun-glint path, projected rings, billboard palms/houses,
+  clouds, volcano smoke and birds.
+- Synthesised WebAudio engine hum, wind and ring chimes (no audio files).
+- Play-tested in headless Chrome: zero console errors, zero failed
+  requests; a real keyboard-driven flight took off, flew through rings
+  1 and 2 (score 644), and a full scripted run flew all 8 rings and
+  landed for 9,066 points. About 35 fps in headless CPU rendering at
+  1280x720 (faster on real hardware).
+
+SCREENSHOTS (screenshots/, all real renders of this code)
+----------------------------------------------------------
+  1-menu.jpg ......... title menu on the home strip, volcano ahead
+  2-takeoff.jpg ...... climbing through ring 1 just after takeoff
+  3-ring.jpg ......... approaching ring 3 over the rice terraces
+  4-cockpit-final.jpg  cockpit view on final approach to Pulau Dermaga
